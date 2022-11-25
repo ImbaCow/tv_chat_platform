@@ -1,0 +1,1 @@
+& "$PSScriptRoot\tvchatcompose.ps1" exec db powershell

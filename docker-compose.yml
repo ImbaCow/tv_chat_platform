@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+  # tv_chat:
+  #   image: tv_chat
+  #   tty: true
+  #   # stdin_open: true
+  #   ports:
+  #     - 5080:80
+  #   build:
+  #     context: ./images/tv_chat
+  #   volumes: 
+  #     - ${APP_PATH}:C:/app
+  db:
+    tty: true
+    # stdin_open: true
+    ports:
+      - 3306:3306
+    build:
+      context: ./images/db
+    volumes: 
+      - ./data/db:C:/data
+
+    # image:  mcr.microsoft.com/mssql/server:2019-latest
+    # restart: always
+    # healthcheck:
+    #   test: ['CMD-SHELL', 'mysqladmin ping -h 127.0.0.1 --password="$$(cat /run/secrets/db-password)" --silent']
+    #   interval: 3s
+    #   retries: 5
+    #   start_period: 30s
+    # volumes:
+    #   - db-data:/var/lib/mysql
+    # environment:
+    #   - ACCEPT_EULA=Y
+    #   - MSSQL_SA_PASSWORD=${APP_PATH}
+    # expose:
+    #   - 3306
