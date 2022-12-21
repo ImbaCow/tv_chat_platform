@@ -1,12 +1,12 @@
 # FROM mcr.microsoft.com/windows/servercore:ltsc2022
 # FROM mcr.microsoft.com/windows/server:ltsc2022
 # FROM mcr.microsoft.com/windows:ltsc2019
-FROM golang:1.19.3-windowsservercore-1809
+FROM golang:1.19
 # FROM mcr.microsoft.com/windows/nanoserver:ltsc2022
 # FROM mcr.microsoft.com/dotnet/sdk:6.0
-WORKDIR C:/app
-COPY ./setup C:/setup
-ENTRYPOINT [ powershell -ExecutionPolicy Bypass -File C:/entry/entry.ps1 ]
+WORKDIR /usr/app/src
+COPY ./setup /usr/app/setup
+ENTRYPOINT ["/usr/app/setup/setup.sh"]
     
     # powershell "Remove-Item -Path 'C:/setup/setup.ps1' -Recurse -Force"
 # RUN powershell C:/setup/setup.ps1

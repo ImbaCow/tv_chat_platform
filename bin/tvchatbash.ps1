@@ -1,1 +1,1 @@
-& "$PSScriptRoot\tvchatcompose.ps1" exec db powershell
+& "$PSScriptRoot\tvchatcompose.ps1" exec tv_chat bash
