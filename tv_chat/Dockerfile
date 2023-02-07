@@ -5,11 +5,12 @@ FROM golang:1.19
 # FROM mcr.microsoft.com/windows/nanoserver:ltsc2022
 # FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /usr/app/src
-COPY ./setup /usr/app/setup
-ENTRYPOINT ["/usr/app/setup/setup.sh"]
+# COPY . .
+# RUN /usr/app/setup/setup.sh
+# ENTRYPOINT [ "/usr/app/bin" ]
     
     # powershell "Remove-Item -Path 'C:/setup/setup.ps1' -Recurse -Force"
-# RUN powershell C:/setup/setup.ps1
+# RUN powershell C:/setup/setup.ps1 
 
 # WORKDIR C:/Downloads
 # ADD https://aka.ms/vs/16/release/vc_redist.x64.exe C:/Downloads/vcredist_x64.exe
@@ -21,11 +22,10 @@ ENTRYPOINT ["/usr/app/setup/setup.sh"]
 # CMD ["--help"]
 
 # ADD ["compose", "C:/compose/"]
-
-# RUN mkdir "%DOWNLOAD_DIR%" && \
+ 
 #     mkdir "%BUILD_DIR%" && \
 #     mkdir "%TARGET_DIR%" && \
-#     powershell -ExecutionPolicy Bypass -File "C:\app\install.ps1" && \
+#     powershell -ExecutionPolicy Bypass -File "C:\app\install.ps1" && \ 
 #     powershell "Remove-Item -Path 'C:\app' -Recurse -Force"
 
-# WORKDIR C:\app 
+# WORKDIR C:\app

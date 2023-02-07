@@ -8,9 +8,9 @@ services:
     ports:
       - 8080:80
     build:
-      context: ./images/tv_chat
+      context: ./tv_chat
     volumes: 
-      - ${APP_PATH}:/usr/app/src
+      - ./tv_chat:/usr/app/src
     depends_on:
       db:
         condition: service_healthy
@@ -41,7 +41,7 @@ services:
       retries: 5
       # start_period: 30s
     # volumes:
-    # - db-data:/var/lib/mysql
+    # - db-data:/var/lib/mysqlWWWWWWWWW
     environment:
       MARIADB_RANDOM_ROOT_PASSWORD: 1
       MARIADB_USER: ${DB_USER}
